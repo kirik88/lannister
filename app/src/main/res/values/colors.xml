@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#8C1317</color>
+    <color name="colorPrimaryVariant">#8C1317</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <color name="colorSecondary">#F3A81F</color>
+    <color name="colorSecondaryVariant">#F3A81F</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+
+    <color name="windowBackground">#F4F4F4</color>
+    <color name="launcherBackground">#8C1317</color>
+
+    <color name="progressCircleStroke">#DADADA</color>
+    <color name="progressCircleBackground">#FFFFFF</color>
+</resources>

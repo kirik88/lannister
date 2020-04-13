@@ -1,0 +1,130 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "4f3ce02c94c62e98437061356c9c473c",
+    "entities": [
+      {
+        "tableName": "Character",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, `gender` TEXT NOT NULL, `culture` TEXT NOT NULL, `born` TEXT NOT NULL, `died` TEXT NOT NULL, `titles` TEXT NOT NULL, `aliases` TEXT NOT NULL, `father` INTEGER, `mother` INTEGER, `spouse` INTEGER, `allegiances` TEXT NOT NULL, `books` TEXT NOT NULL, `povBooks` TEXT NOT NULL, `tvSeries` TEXT NOT NULL, `playedBy` TEXT NOT NULL, `displayInList` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gender",
+            "columnName": "gender",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "culture",
+            "columnName": "culture",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "born",
+            "columnName": "born",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "died",
+            "columnName": "died",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titles",
+            "columnName": "titles",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aliases",
+            "columnName": "aliases",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "father",
+            "columnName": "father",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mother",
+            "columnName": "mother",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "spouse",
+            "columnName": "spouse",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "allegiances",
+            "columnName": "allegiances",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "books",
+            "columnName": "books",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "povBooks",
+            "columnName": "povBooks",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tvSeries",
+            "columnName": "tvSeries",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "playedBy",
+            "columnName": "playedBy",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayInList",
+            "columnName": "displayInList",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4f3ce02c94c62e98437061356c9c473c')"
+    ]
+  }
+}

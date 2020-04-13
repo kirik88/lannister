@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.kirik88.lannister.vm.CharacterViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/windowBackground"
+        tools:context=".ui.MainActivity">
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.isLoaded ? View.VISIBLE : View.GONE}">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_padding">
+
+                <TextView
+                    android:id="@+id/nameValue"
+                    style="@style/CharacterHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    app:characterName="@{viewModel.character.character}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Jon Snow" />
+
+                <TextView
+                    android:id="@+id/gender"
+                    style="@style/CharacterTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_padding"
+                    android:text="@string/character_gender"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nameValue" />
+
+                <TextView
+                    android:id="@+id/genderValue"
+                    style="@style/CharacterText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/item_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/gender"
+                    app:possibleBlank="@{viewModel.character.character.gender}"
+                    tools:text="Male" />
+
+                <TextView
+                    android:id="@+id/culture"
+                    style="@style/CharacterTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_padding"
+                    android:text="@string/character_culture"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/genderValue" />
+
+                <TextView
+                    android:id="@+id/cultureValue"
+                    style="@style/CharacterText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/item_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/culture"
+                    app:possibleBlank="@{viewModel.character.character.culture}"
+                    tools:text="Northmen" />
+
+                <TextView
+                    android:id="@+id/born"
+                    style="@style/CharacterTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_padding"
+                    android:text="@string/character_born"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cultureValue" />
+
+                <TextView
+                    android:id="@+id/bornValue"
+                    style="@style/CharacterText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/item_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/born"
+                    app:possibleBlank="@{viewModel.character.character.born}"
+                    tools:text="In 283 AC" />
+
+                <TextView
+                    android:id="@+id/died"
+                    style="@style/CharacterTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_padding"
+                    android:text="@string/character_died"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bornValue" />
+
+                <TextView
+                    android:id="@+id/diedValue"
+                    style="@style/CharacterText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/item_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/died"
+                    app:possibleBlank="@{viewModel.character.character.died}"
+                    tools:text="-" />
+
+                <TextView
+                    android:id="@+id/titles"
+                    style="@style/CharacterTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_padding"
+                    android:text="@string/character_titles"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/diedValue" />
+
+                <TextView
+                    android:id="@+id/titlesValue"
+                    style="@style/CharacterText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/item_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titles"
+                    app:list="@{viewModel.character.character.titles}"
+                    tools:text="Lord Commander of the Night's Watch" />
+
+                <TextView
+                    android:id="@+id/aliases"
+                    style="@style/CharacterTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_padding"
+                    android:text="@string/character_aliases"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titlesValue" />
+
+                <TextView
+                    android:id="@+id/aliasesValue"
+                    style="@style/CharacterText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/item_padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/aliases"
+                    app:list="@{viewModel.character.character.aliases}"
+                    tools:text="Lord Snow\nNed Stark's Bastard\nThe Snow of Winterfell\nThe Crow-Come-Over\nThe 998th Lord Commander of the Night's Watch\nThe Bastard of Winterfell\nLord Crow" />
+
+                <TextView
+                    android:id="@+id/father"
+                    style="@style/CharacterTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_padding"
+                    android:text="@string/character_father"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/aliasesValue" />
+
+                <TextView
+                    android:id="@+id/fatherValue"
+                    style="@style/CharacterText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/item_padding"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:foreground="?selectableItemBackground"
+                    android:onClick="@{() -> viewModel.onOpenFather()}"
+                    app:drawableTint="?colorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/father"
+                    app:linkId="@{viewModel.character.character.father}"
+                    app:linkText="@{viewModel.character.fatherName}"
+                    tools:drawableStart="@drawable/ic_forward_black_24dp"
+                    tools:text="Rhaegar Targaryen" />
+
+                <TextView
+                    android:id="@+id/mother"
+                    style="@style/CharacterTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_padding"
+                    android:text="@string/character_mother"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fatherValue" />
+
+                <TextView
+                    android:id="@+id/motherValue"
+                    style="@style/CharacterText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/item_padding"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:foreground="?selectableItemBackground"
+                    android:onClick="@{() -> viewModel.onOpenMother()}"
+                    app:drawableTint="?colorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mother"
+                    app:linkId="@{viewModel.character.character.mother}"
+                    app:linkText="@{viewModel.character.motherName}"
+                    tools:drawableStart="@drawable/ic_forward_black_24dp"
+                    tools:text="Lyanna Stark" />
+
+                <TextView
+                    android:id="@+id/spouse"
+                    style="@style/CharacterTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_padding"
+                    android:text="@string/character_spouse"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/motherValue" />
+
+                <TextView
+                    android:id="@+id/spouseValue"
+                    style="@style/CharacterText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/item_padding"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:foreground="?selectableItemBackground"
+                    android:onClick="@{() -> viewModel.onOpenSpouse()}"
+                    app:drawableTint="?colorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spouse"
+                    app:linkId="@{viewModel.character.character.spouse}"
+                    app:linkText="@{viewModel.character.spouseName}"
+                    tools:drawableStart="@drawable/ic_forward_black_24dp"
+                    tools:text="Ygritte" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ProgressBar
+            style="?android:progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{!viewModel.isLoaded ? View.VISIBLE : View.GONE}" />
+    </FrameLayout>
+</layout>

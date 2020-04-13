@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/characterListFragment">
+
+    <fragment
+        android:id="@+id/characterListFragment"
+        android:name="com.kirik88.lannister.ui.fragments.CharacterListFragment"
+        android:label="@string/character_list_title"
+        tools:layout="@layout/fragment_character_list">
+        <action
+            android:id="@+id/action_characterListFragment_to_characterFragment"
+            app:destination="@id/characterFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterFragment"
+        android:name="com.kirik88.lannister.ui.fragments.CharacterFragment"
+        android:label="@string/character_title"
+        tools:layout="@layout/fragment_character">
+        <argument
+            android:name="characterId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_characterFragment_self"
+            app:destination="@id/characterFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://anapioficeandfire.com/api/characters/{characterId}" />
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="https://www.anapioficeandfire.com/api/characters/{characterId}" />
+    </fragment>
+</navigation>

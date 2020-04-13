@@ -1,0 +1,31 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.Splash" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="CharacterText">
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+    </style>
+
+    <style name="CharacterTitle" parent="CharacterText">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CharacterHeader" parent="CharacterTitle">
+        <item name="android:textAppearance">?textAppearanceHeadline4</item>
+    </style>
+
+</resources>
